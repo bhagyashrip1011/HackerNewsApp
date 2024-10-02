@@ -1,0 +1,30 @@
+
+<nav class="navbar navbar-dark bg-dark">
+  <div class="navcontent container-fluid">
+    <a class="navbar-brand">HackerNews</a>
+    <form>
+      <div class="mr-4">
+        <input
+          class="form-control mr-sm-2"
+          type="text"
+          name="search"
+          placeholder="Search here..."
+          (keyup)="onSearch($event)"
+        />
+      </div>
+    </form>
+  </div>
+</nav>
+  <div class="container mt-5">
+    <div class="row" *ngIf="news"> 
+      <div  *ngFor="let item of news" class="col-md-6">
+        <app-news [title]="item.title" [url]="item.url"></app-news>
+      </div>    
+    </div>
+    <mat-paginator [length]="totalNews" [pageSize]="pageSize" [pageIndex]="currentPage" (page)="onPageChange(currentPage + 1)"></mat-paginator>
+  </div>
+
+
+<ngx-spinner bdColor="rgba(7,1,1,0.95)" size="medium" type="pacman">
+  <p style="color: white">Loading</p>
+</ngx-spinner>

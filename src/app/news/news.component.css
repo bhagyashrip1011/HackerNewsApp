@@ -1,0 +1,11 @@
+.newsDiv {
+    height: 100px;
+    background: #edebf4;
+    margin-top: 50px; 
+    padding:20px;
+  }
+
+  .readMore {
+    bottom: 0;
+    right: 0;
+  }
